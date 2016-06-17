@@ -1,0 +1,97 @@
+<div ui-content-for="title">
+  <span>SOPO</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+
+
+
+
+
+<div class="container">
+       <div class="row text-center pad-top ">
+           <div class="col-md-12">
+               <h2>Join SOPO</h2>
+           </div>
+       </div>
+        <div class="row  pad-top">
+
+               <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                       <div class="panel panel-default">
+                           <div class="panel-heading">
+                       <strong>   Register Yourself </strong>
+                           </div>
+                           <div class="panel-body">
+                               <form ng-submit="doRegist()">
+<br/>
+                                       <div class="form-group input-group">
+                                           <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
+                                           <input type="text" class="form-control" placeholder="Your Name" ng-model="userInfo.name"/>
+                                       </div>
+                                    <div class="form-group input-group">
+                                           <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                                           <input type="text" class="form-control" placeholder="Your ID" ng-model="userInfo.user_id"/>
+                                       </div>
+                                       <div class="form-group input-group">
+                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                                             <input type="password" class="form-control" placeholder="Enter Password" ng-model="userInfo.password"/>
+                                         </div>
+                                         <div class="form-group input-group">
+                                               <span class="input-group-addon"><i class="fa fa-phone"  ></i></span>
+                                               <input type="password" class="form-control" placeholder="phone-number" ng-model="userInfo.phone"/>
+                                           </div>
+                                        <div class="form-group input-group">
+                                           <span class="input-group-addon">@</span>
+                                           <input type="text" class="form-control" placeholder="Your Email" ng-model="userInfo.email" />
+                                       </div>
+                                       <div class="form-group input-group">
+                                          <span class="input-group-addon"><i class="fa fa-pencil"  ></i></span>
+                                          <select class="form-control" ng-model="userInfo.grade">
+                                               <option value="" selected disabled>choose Grade</option>
+                                                <option>1학년</option>
+                                                <option>2학년</option>
+                                                <option>3학년</option>
+                                                <option>4학년</option>
+                                           </select>
+                                      </div>
+                                      <div class="form-group input-group">
+                                         <span class="input-group-addon"><i class="fa fa-user-md"  ></i></span>
+                                         <select class="form-control" ng-model="userInfo.status">
+                                              <option value="" selected disabled>choose Staus</option>
+                                               <option>재학중</option>
+                                               <option>휴학중</option>
+                                          </select>
+
+                                     </div>
+
+                                           <span class="input-group-addon"><i class="fa fa-image"  ></i></span>
+                                           <input type="file" name="file" ng-model="userInfo.file" class="form-control"/>
+
+
+
+                                       </div>
+                                    <button class="btn btn-success btn-block" type="button" ng-click="doRegist()">Register</button>
+
+                                    <hr/>
+                                    <div class="alert alert-warning" ng-if="registMessage">
+                                      <i class="fa fa-exclamation-circle"></i> {{ registMessage }}
+                                    </div>
+
+                                   <hr />
+                                   Already Registered ?  <a href="#/" >Login here</a>
+                                   </form>
+                           </div>
+
+                       </div>
+                   </div>
+
+                   <p>{{userInfo.user_id}}</p>
+                   <p>{{userInfo.name}}</p>
+       </div>
+   </div>
+
+ </div>
+ </div>
+ </div>
+ </div>

@@ -1,0 +1,10 @@
+<div class="scrollable" >
+  <div class="scrollable-content" id="list1">
+    <div class="list-group">
+      <a ng-repeat="article in articleList" class="list-group-item" ng-click="gotoArticle($index)">
+        {{ article.title }} <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+      <a class="list-group-item" ng-click="loadData(10)">더 보기...</a>
+    </div>
+  </div>
+</div>

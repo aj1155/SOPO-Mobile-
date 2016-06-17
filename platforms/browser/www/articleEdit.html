@@ -1,0 +1,22 @@
+<style>
+input { width: 100%; margin-bottom: 5px; }
+textarea.form-control { width: 100%; margin-bottom: 5px; height: 400px; }
+</style>
+
+<div ui-content-for="title">게시글 쓰기</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+ 
+  <input type="text" class="form-control" ng-model="title" placeholder="제목을 입력하세요" />
+  <textarea class="form-control" ng-model="body" placeholder="내용을 입력하세요"></textarea>
+
+  <div class="btn-group justified">
+     <a class="btn btn-default btn-info" ng-click="save()">
+        <i class="fa fa-save"></i> 저장</a>
+     <a class="btn btn-default" href="#/articleList">
+        <i class="fa fa-close"></i> 취소</a>
+  </div>            
+
+ </div>
+</div>    

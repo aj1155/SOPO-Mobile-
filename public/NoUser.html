@@ -1,0 +1,36 @@
+<style>
+table tr:hover{cursor: pointer;}
+
+</style>
+<div ui-content-for="title">
+  <span>안 읽은 한생</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content section">
+
+
+
+
+
+        <div class="container">
+        <table class="table table-striped table-bordered"  style="table-layout: fixed;">
+      <thead>
+      <tr><th>학번</th><th>이름</th><th>재학상태</th><th>연락처</th></tr>
+      </thead>
+      <tbody>
+      <tr  ng-repeat="mem in members" >
+        <td>{{mem.user_id}}</td>
+        <td>{{mem.name}}</td>
+        <td>{{mem.status}}</td>
+        <td>{{mem.phone}}</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+
+      </div>
+
+
+
+</div>

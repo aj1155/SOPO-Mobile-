@@ -1,0 +1,27 @@
+<div ui-content-for="title">게시글</div>
+<div ui-content-for="navbarAction">
+  <a class="btn" ng-click="gotoEdit()" ng-if="user && articleList[index].userId == user.id">
+    <i class="fa fa-edit"></i> 수정
+</a>
+
+    <a class="btn" ng-click="delete()" ng-if="user && articleList[index].userId == user.id">
+        <i class="fa fa-remove"></i> 삭제
+    </a>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ articleList[index].title }}</h3>
+        </div>
+        <div class="panel-body">
+           <p ng-bind-html="articleList[index].body"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

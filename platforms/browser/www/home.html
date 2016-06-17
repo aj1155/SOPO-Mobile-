@@ -1,0 +1,20 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <div class='section'> 
+            <h1>첫 화면</h1>
+        
+            <p ng-if="user">
+                <a class="btn btn-info btn-block" ng-click="logout()">
+                    <i class="fa fa-sign-out"></i>
+                    로그아웃 - {{ user.name }} ({{ user.loginId }}) 
+                </a>
+            </p>
+            <p ng-if="!user">
+                <a class="btn btn-info btn-block" href="#/login">
+                    <i class="fa fa-sign-in"></i>
+                    로그인
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

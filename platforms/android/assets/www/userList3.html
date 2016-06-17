@@ -1,0 +1,66 @@
+<script>
+
+  var check = false;
+function CheckAll(){
+  var chk = document.getElementsByName("del_unit[]");
+  if(check == false){
+    check = true;
+    for(var i=0; i<chk.length;i++){
+      chk[i].checked = true;     //모두 체크
+    }
+  }else{
+    check = false;
+    for(var i=0; i<chk.length;i++){
+      chk[i].checked = false;     //모두 해제
+    }
+  }
+}
+
+</script>
+<div ui-content-for="title">
+  <span>SOPO</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+
+<ul class="nav nav-tabs">
+     <li ng-class="{'active': activeTab1 == $index}"  ng-repeat="d in departmentList">
+       <a ng-click="gotoTab($index)">{{ d.subject_name}}</a>
+     </li>
+   </ul>
+
+   <div style="margin-top:20px;" >
+
+
+           <input style="display:inline-block" type="search"
+              class="form-control" placeholder="학생검색....." ng-model="user2"/>
+
+      <button style="margin-top:10px"class="btn btn-info btn-block "  ng-click="noticeInfo(student)">공지하기</button>
+
+  </div>
+  <div style="margin-top:40px;" ng-if="activeTab1== $index" ng-repeat="department in departmentList">
+
+      <div class="pull-right">
+        <label>전체선택</label>
+      <input type="checkbox"  name="checkall" onclick="javascript:CheckAll()" ng-click="checkAllValue(checkall)">
+    </div>
+    <div class="container">
+    <div class="row">
+<hr/>
+  <ul  class="list-group">
+    <li ng-repeat="user2 in deList[$index] | filter:user2" class="list-group-item-warning">
+        <img style="width:40px;height:40px;"class="img-circle" src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+      <a ng-click="userInfo(user2)">{{ user2.name}}</a>
+      <input type="checkbox" id="del_id" class="pull-right"ng-click = "checkValue(user2)" ng-checked="student.indexOf(user)>-1" name="del_unit[]" value="user2.user_id">
+
+
+
+    </li>
+  </ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>

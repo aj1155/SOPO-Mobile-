@@ -1,0 +1,38 @@
+
+
+</style>
+<div ui-content-for="title">
+  <span>Form</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+
+<div class="row" ng-controller="mainCtrl">
+    <div class="small-10 column">
+        <h2>Responsive Cards</h2>
+        <h4>AngularJS, Foundation and Animate CSS</h4>
+    </div>
+    <div class="column medium-4 animated" ng-class-odd="'slideInLeft'" ng-class-even="'slideInRight'" ng-repeat="u in users">
+        <div class="panel text-center">
+            <img class="circle" src="{{u.user.picture.medium}}">
+            <h3 class="ellipsis">{{u.user.username}}</h3>
+            <p class="ellipsis-2">{{u.user.slogan}}</p>
+            <hr>
+            <div class="medium-12 sm-centered lg-centered column">
+                <ul class="small-block-grid-4 text-center">
+                    <li><a href=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram fa-2x"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+            <a href="#" data-dropdown="drop{{u.user.username}}" aria-controls="drop{{u.user.username}}" class="ellipsis">{{u.user.location.city}}, {{u.user.location.state}}</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>

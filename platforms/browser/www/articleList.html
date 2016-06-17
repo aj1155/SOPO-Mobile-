@@ -1,0 +1,17 @@
+<div ui-content-for="title">게시글 목록</div>
+<div ui-content-for="navbarAction">
+    <a class="btn" href="#/articleCreate" ng-if="user">
+        <i class="fa fa-edit"></i> 글쓰기
+    </a>
+</div>
+
+<div class="scrollable" >
+  <div class="scrollable-content" id="list1">
+    <div class="list-group">
+      <a ng-repeat="article in articleList" class="list-group-item" ng-click="gotoArticle($index)">
+        {{ article.title }} <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+      <a class="list-group-item" ng-click="loadArticleList(5)">더 보기...</a>
+    </div>
+  </div>
+</div>

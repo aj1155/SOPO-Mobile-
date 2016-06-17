@@ -1,0 +1,50 @@
+<script>
+
+$(function() {
+  console.log('jqueary실행');
+
+  $('#btn1').click(function(){
+    var msg2;
+
+    msg2 =$('#txt1').val();
+
+    console.log('이벤트 실행!');
+    $('#pbody').append('<li>'+msg2+'</li>');
+  });
+
+
+});
+</script>
+<div class="container">
+<div class="scrollable" ng-init="setNickName()">
+  <div class="scrollable-content" ng-init="getRoomMessage()">
+      <div class="section">
+<div style="height:10px"></div>
+<div class="col-md-4">
+
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Chat Box({{user.name}})</h3>
+    </div>
+    <div style="height:400px; overflow:scroll;" class="panel-body" id="pbody">
+      <li ng-if="text" ng-repeat="text in ptext">{{text.sender}}-->{{text.recipient}} : {{text.text}}  ({{text.time}})<br/></li>
+      <li ng-if="texts" ng-repeat="texts in roomMessage"><img style="width:40px; height:40px;"src="http://localhost:3000/images"+{{text.sender_id}}+".jpg" alt="" class="img-circle">{{texts.sender}}-->{{texts.recipient}} : {{texts.text}}  ({{texts.time}}) <button type="button" ng-if="user.special ==1 && texts.check_message>0 " class="btn btn-warning btn-circle " ng-click="openWindow(texts.id)">{{texts.check_message}}</button><br/></li>
+
+
+    </div>
+    <div class="panel-footer">
+
+    	<div class="input-group">
+        <input type="text" id="txt1" class="form-control" placeholder="Message ..." ng-model="msg"></input>
+        <span class="input-group-btn">
+        <button class="btn btn-default" id ="btn1" type="button" ng-click="sendMessage()">Send</button>
+      </span>
+    </div><!-- /input-group -->
+    </div>
+
+
+  </div>
+</div>
+</div>
+</div>

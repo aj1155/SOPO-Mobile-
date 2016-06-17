@@ -1,0 +1,58 @@
+<div ui-content-for="title">
+    <span>Form</span>
+  </div>
+
+  <div class="scrollable" >
+    <div class="scrollable-content">
+      <div class="section">
+
+        <h4>그룹 선택:{{activeBtn1}}</h4>
+
+        <div class="btn-group justified">
+      <a class="btn btn-default" ng-class="{'btn-primary': ch1}" ng-click="ch1 = !ch1">동</a>
+      <a class="btn btn-default" ng-class="{'btn-primary': ch2}" ng-click="ch2 = !ch2">서</a>
+      <a class="btn btn-default" ng-class="{'btn-primary': ch3}" ng-click="ch3 = !ch3">남</a>
+      <a class="btn btn-default" ng-class="{'btn-primary': ch4}" ng-click="ch4 = !ch4">북</a>
+    </div>
+
+    <hr />
+
+   <h4>그룹 선택: {{ activeBtn2 }}</h4>
+
+    <div class="btn-group">
+      <a class="btn btn-default" ng-class="{'btn-info': activeBtn2==1}" ng-click="activeBtn2=1">남자</a>
+      <a class="btn btn-default" ng-class="{'btn-info': activeBtn2==2}" ng-click="activeBtn2=2">여자</a>
+    </div>
+
+    <hr />
+
+    <h4>그룹 선택: {{ activeBtn3 }}</h4>
+
+    <div class="btn-group justified">
+      <a class="btn btn-default" ng-class="{'btn-primary': activeBtn3==1}" ng-click="activeBtn3=1">Primary</a>
+      <a class="btn btn-default" ng-class="{'btn-info': activeBtn3==2}"    ng-click="activeBtn3=2">Info</a>
+      <a class="btn btn-default" ng-class="{'btn-success': activeBtn3==3}" ng-click="activeBtn3=3">Success</a>
+      <a class="btn btn-default" ng-class="{'btn-warning': activeBtn3==4}" ng-click="activeBtn3=4">Warning</a>
+      <a class="btn btn-default" ng-class="{'btn-danger': activeBtn3==5}"  ng-click="activeBtn3=5">Danger</a>
+    </div>
+
+    <hr />
+
+    <h4>버튼 종류</h4>
+
+    <div class="btn-group justified">
+      <a class="btn btn-primary" ng-click="activeBtn3=1">Primary</a>
+      <a class="btn btn-info"    ng-click="activeBtn3=2">Info</a>
+      <a class="btn btn-success" ng-click="activeBtn3=3">Success</a>
+      <a class="btn btn-warning" ng-click="activeBtn3=4">Warning</a>
+      <a class="btn btn-danger"  ng-click="activeBtn3=5">Danger</a>
+      <a class="btn btn-danger"  ng-click="gogo()">get</a>
+    </div>
+    <hr />
+
+    <h4>체크: {{ savePassword }}</h4>
+    <ui-switch ng-model='savePassword'></ui-switch>
+
+  </div>
+</div>
+</div>

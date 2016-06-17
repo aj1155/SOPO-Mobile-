@@ -1,0 +1,178 @@
+<style>
+body{
+    background:#eee;
+}
+.main-box.no-header {
+    padding-top: 20px;
+}
+.main-box {
+    background: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    box-shadow: 1px 1px 2px 0 #CCCCCC;
+    margin-bottom: 16px;
+    -webikt-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.table tbody tr:hover{
+  cursor: pointer;
+}
+.table a.table-link.danger {
+    color: #e74c3c;
+}
+.label {
+    border-radius: 3px;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+.user-list tbody td .user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.user-list tbody td .user-link {
+    display: block;
+    font-size: 1.25em;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+a {
+    color: #3498db;
+    outline: none!important;
+}
+.user-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.table thead tr th {
+    border-bottom: 2px solid #e7ebee;
+}
+.table tbody tr td:first-child {
+    font-size: 1.125em;
+    font-weight: 300;
+}
+.table tbody tr td {
+    font-size: 0.875em;
+    vertical-align: middle;
+    border-top: 1px solid #e7ebee;
+    padding: 12px 8px;
+}
+</style>
+<script>
+
+  var check = false;
+function CheckAll(){
+  var chk = document.getElementsByName("del_unit[]");
+  if(check == false){
+    check = true;
+    for(var i=0; i<chk.length;i++){
+      chk[i].checked = true;     //모두 체크
+    }
+  }else{
+    check = false;
+    for(var i=0; i<chk.length;i++){
+      chk[i].checked = false;     //모두 해제
+    }
+  }
+}
+
+</script>
+<div ui-content-for="title">
+<span>학생 목록</span>
+</div>
+
+<div class="scrollable">
+   <div class="scrollable-content section">
+
+      <ul class="nav nav-tabs">
+        <li ng-class="{'active': activeTab1 == $index}"  ng-repeat="d in departmentList">
+          <a ng-click="gotoTab($index)">{{ d.subject_name}}</a>
+        </li>
+      </ul>
+      <div style="float:right; margin-top:5px;" class="col-xs-4" >
+          <div class="right-inner-addon">
+              <i style="margin-right:10px;" class="icon-search"></i>
+              <input style="display:inline-block" type="search"
+                     class="form-control"
+                     placeholder="Search" ng-model="user2"/>
+          </div>
+    </div>
+
+
+      <div style="margin-top:40px;" ng-if="activeTab1== $index" ng-repeat="department in departmentList">
+<span style="margin-left:15px;"class='label label-primary' ng-click="noticeInfo(student)">공지하기</span>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>학생리스트</span></th>
+                                <th><span>입학년도</span></th>
+                                <th class="text-center"><span>재학상태</span></th>
+                                <th><span>Email</span></th>
+                                <th><label>
+                                 <input type="checkbox" name="checkall" onclick="javascript:CheckAll()" ng-click="checkAllValue(checkall)">
+                               </label></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="user2 in deList[$index] | filter:user2">
+                                    <td>
+                                        <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <a  class="user-link" ng-click="userInfo(user2)">{{user2.name}}</a>
+                                        <span class="user-subhead">학생</span>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span ng-class="{'label label-danger': user2.status == '휴학중','label label-success': user2.status == '재학중'}">{{user2.status}}</span>
+                                    </td>
+                                    <td>
+                                        <a >{{user2.email}}</a>
+                                    </td>
+                                    <td style="width: 20%;">
+
+                                        <input type="checkbox" id="del_id"ng-click = "checkValue(user2)" ng-checked="student.indexOf(user)>-1" name="del_unit[]" value="user2.user_id">
+
+                                      </input>
+
+
+                                        <a  class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a class="table-link danger">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+        </div>
+    </div>
+</div>
+      </div>
+  </div>
+</div>
+</div>

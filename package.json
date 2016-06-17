@@ -1,0 +1,40 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "populate": "node ./bin/populate_db",
+    "start": "node ./bin/www"
+  },
+  "author": "leejunwoo",
+  "license": "ISC",
+  "dependencies": {
+    "angular-file-upload": "^2.2.0",
+    "async": "^1.5.2",
+    "body-parser": "^1.14.2",
+    "bson": "^0.4.21",
+    "connect": "^3.4.1",
+    "cookie-parser": "^1.4.1",
+    "debug": "^2.2.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "formidable": "^1.0.17",
+    "fs": "0.0.2",
+    "git": "^0.1.5",
+    "jade": "^1.11.0",
+    "mongodb": "^2.1.4",
+    "mongoose": "^4.3.6",
+    "mongoose-post-find": "0.0.2",
+    "morgan": "^1.6.1",
+    "mssql": "^3.1.2",
+    "multer": "^1.1.0",
+    "ng-file-upload": "^12.0.4",
+    "serve-favicon": "^2.3.0",
+    "session": "^0.1.0",
+    "socket.io": "^1.4.5",
+    "websocket": "^1.0.22"
+  }
+}
